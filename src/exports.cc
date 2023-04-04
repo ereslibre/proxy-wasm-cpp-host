@@ -879,6 +879,74 @@ Word wasi_unstable_random_get(Word result_buf_ptr, Word buf_len) {
   return 0; // __WASI_ESUCCESS
 }
 
+Word wasi_unstable_fd_datasync(Word fd) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_fdstat_set_flags(Word fd, Word flags) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_filestat_get(Word fd, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_filestat_set_size(Word fd, uint64_t size) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_readdir(Word, Word, Word, int64_t, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_sync(Word fd) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_tell(Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_create_directory(Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_filestat_get(Word, Word, Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, int64_t, int64_t, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_link(Word, Word, Word, Word, Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_readlink(Word, Word, Word, Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_remove_directory(Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_rename(Word, Word, Word, Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_symlink(Word, Word, Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_unlink_file(Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_poll_oneoff(Word, Word, Word, Word) {
+  return 0; // __WASI_ESUCCESS
+}
+
 // void __wasi_proc_exit(__wasi_exitcode_t rval);
 void wasi_unstable_proc_exit(Word /*exit_code*/) {
   auto *context = contextOrEffectiveContext();

@@ -149,6 +149,25 @@ Word wasi_unstable_random_get(Word, Word);
 Word pthread_equal(Word left, Word right);
 void emscripten_notify_memory_growth(Word);
 
+// ereslibre: support running interpreted languages
+Word wasi_unstable_fd_datasync(Word);
+Word wasi_unstable_fd_fdstat_set_flags(Word, Word);
+Word wasi_unstable_fd_filestat_get(Word, Word);
+Word wasi_unstable_fd_filestat_set_size(Word, uint64_t);
+Word wasi_unstable_fd_readdir(Word, Word, Word, int64_t, Word);
+Word wasi_unstable_fd_sync(Word);
+Word wasi_unstable_fd_tell(Word, Word);
+Word wasi_unstable_path_create_directory(Word, Word, Word);
+Word wasi_unstable_path_filestat_get(Word, Word, Word, Word, Word);
+Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, int64_t, int64_t, Word);
+Word wasi_unstable_path_link(Word, Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_readlink(Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_remove_directory(Word, Word, Word);
+Word wasi_unstable_path_rename(Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_symlink(Word, Word, Word, Word, Word);
+Word wasi_unstable_path_unlink_file(Word, Word, Word);
+Word wasi_unstable_poll_oneoff(Word, Word, Word, Word);
+
 // Support for embedders, not exported to Wasm.
 
 #define FOR_ALL_HOST_FUNCTIONS(_f)                                                                 \
@@ -171,8 +190,13 @@ void emscripten_notify_memory_growth(Word);
 
 #define FOR_ALL_WASI_FUNCTIONS(_f)                                                                 \
   _f(fd_write) _f(fd_read) _f(fd_seek) _f(fd_close) _f(fd_fdstat_get) _f(environ_get)              \
-      _f(environ_sizes_get) _f(args_get) _f(args_sizes_get) _f(clock_time_get) _f(random_get)      \
-          _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name)
+  _f(environ_sizes_get) _f(args_get) _f(args_sizes_get) _f(clock_time_get) _f(random_get)          \
+  _f(fd_datasync) _f(fd_fdstat_set_flags) _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name) \
+  _f(fd_filestat_get) _f(fd_filestat_set_size) _f(fd_readdir) _f(fd_sync) _f(fd_tell)              \
+  _f(path_create_directory) _f(path_filestat_get) _f(path_filestat_set_times) _f(path_link)        \
+  _f(path_readlink) _f(path_remove_directory) _f(path_rename) _f(path_symlink)       \
+  _f(path_unlink_file) _f(poll_oneoff)
+
 
 // Helpers to generate a stub to pass to VM, in place of a restricted proxy-wasm capability.
 #define _CREATE_PROXY_WASM_STUB(_fn)                                                               \
