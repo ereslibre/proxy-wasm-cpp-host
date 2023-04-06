@@ -129,25 +129,6 @@ Word call_foreign_function(Word function_name, Word function_name_size, Word arg
 
 // Runtime environment functions exported from envoy to wasm.
 
-//<< ereslibre: list of missing imports used by PHP cli
-//  - fd_filestat_get
-//  - fd_filestat_set_size
-//  - fd_readdir
-//  - fd_sync
-//  - fd_tell
-//  - path_create_directory
-//  - path_filestat_get
-//  - path_filestat_set_times
-//  - path_link
-//  - path_open
-//  - path_readlink
-//  - path_remove_directory
-//  - path_rename
-//  - path_symlink
-//  - path_unlink_file
-//  - poll_oneoff
-//>> ereslibre: list of missing imports used by PHP cli
-
 Word wasi_unstable_path_open(Word fd, Word dir_flags, Word path, Word path_len, Word oflags,
                              int64_t fs_rights_base, int64_t fg_rights_inheriting, Word fd_flags,
                              Word nwritten_ptr);
@@ -165,10 +146,28 @@ Word wasi_unstable_args_sizes_get(Word argc_ptr, Word argv_buf_size_ptr);
 void wasi_unstable_proc_exit(Word);
 Word wasi_unstable_clock_time_get(Word, uint64_t, Word);
 Word wasi_unstable_random_get(Word, Word);
-Word wasi_unstable_fd_datasync(Word);
-Word wasi_unstable_fd_fdstat_set_flags(Word, Word);
 Word pthread_equal(Word left, Word right);
 void emscripten_notify_memory_growth(Word);
+
+// ereslibre: support running interpreted languages
+Word wasi_unstable_fd_datasync(Word);
+Word wasi_unstable_fd_fdstat_set_flags(Word, Word);
+Word wasi_unstable_fd_filestat_get(Word);
+Word wasi_unstable_fd_filestat_set_size(Word, Word);
+Word wasi_unstable_fd_readdir(Word, Word, Word, Word);
+Word wasi_unstable_fd_sync(Word);
+Word wasi_unstable_fd_tell(Word);
+Word wasi_unstable_path_create_directory(Word, Word);
+Word wasi_unstable_path_filestat_get(Word, Word, Word);
+Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_link(Word, Word, Word, Word, Word);
+Word wasi_unstable_path_open(Word, Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_readlink(Word, Word, Word, Word);
+Word wasi_unstable_path_remove_directory(Word, Word);
+Word wasi_unstable_path_rename(Word, Word, Word, Word);
+Word wasi_unstable_path_symlink(Word, Word, Word);
+Word wasi_unstable_path_unlink_file(Word, Word);
+Word wasi_unstable_poll_oneoff(Word, Word, Word)
 
 // Support for embedders, not exported to Wasm.
 
@@ -192,8 +191,13 @@ void emscripten_notify_memory_growth(Word);
 
 #define FOR_ALL_WASI_FUNCTIONS(_f)                                                                 \
   _f(fd_write) _f(fd_read) _f(fd_seek) _f(fd_close) _f(fd_fdstat_get) _f(environ_get)              \
-      _f(environ_sizes_get) _f(args_get) _f(args_sizes_get) _f(clock_time_get) _f(random_get)      \
-      _f(fd_datasync) _f(fd_fdstat_set_flags) _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name)
+  _f(environ_sizes_get) _f(args_get) _f(args_sizes_get) _f(clock_time_get) _f(random_get)          \
+  _f(fd_datasync) _f(fd_fdstat_set_flags) _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name) \
+  _f(fd_filestat_get) _f(fd_filestat_set_size) _f(fd_readdir) _f(fd_sync) _f(fd_tell) \
+  _f(path_create_directory) _f(path_filestat_get) _f(path_filestat_set_times) _f(path_link) \
+  _f(path_open) _f(path_readlink) _f(path_remove_directory) _f(path_rename) _f(path_symlink) \
+  _f(path_unlink_file) _f(poll_oneoff)
+
 
 // Helpers to generate a stub to pass to VM, in place of a restricted proxy-wasm capability.
 #define _CREATE_PROXY_WASM_STUB(_fn)                                                               \

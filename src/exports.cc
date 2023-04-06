@@ -887,6 +887,70 @@ Word wasi_unstable_fd_fdstat_set_flags(Word fd, Word flags) {
   return 0; // __WASI_ESUCCESS
 }
 
+Word wasi_unstable_fd_filestat_get(Word fd) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_filestat_set_size(Word fd, Word size) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_readdir(Word fd, Word buf, Word buf_len, Word cookie) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_sync(Word fd) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_fd_tell(Word fd) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_create_directory(Word fd, Word path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_filestat_get(Word fd, Word flags, Word path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_filestat_set_times(Word fd, Word flags, Word path, Word atim, Word mtim, Word fst_flags) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_link(Word old_fd, Word old_flags, Word old_path, Word new_fd, Word new_path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_open(Word fd, Word dirflags, Word path, Word oflags, Wordfs_rights_base, Word fs_rights_inheriting, Word fdflags) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_readlink(Word fd, Word path, Word buf, Word buf_len) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_remove_directory(Word fd, Word path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_rename(Word fd, Word old_path, Word new_fd, Word new_path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_symlink(Word old_path, Word fd, Word new_path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_path_unlink_file(Word fd, Word path) {
+  return 0; // __WASI_ESUCCESS
+}
+
+Word wasi_unstable_poll_oneoff(Word in, Word out, Word nsubscriptions) {
+  return 0; // __WASI_ESUCCESS
+}
+
 // void __wasi_proc_exit(__wasi_exitcode_t rval);
 void wasi_unstable_proc_exit(Word /*exit_code*/) {
   auto *context = contextOrEffectiveContext();
