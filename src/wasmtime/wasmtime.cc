@@ -259,10 +259,10 @@ bool Wasmtime::link(std::string_view /*debug_name*/) {
     case WASM_EXTERN_FUNC: {
       auto it = host_functions_.find(std::string(module_name) + "." + std::string(name));
       if (it == host_functions_.end()) {
-        // fail(FailState::UnableToInitializeCode,
-        //      std::string("Failed to load Wasm module due to a missing import: ") +
-        //          std::string(module_name) + "." + std::string(name));
-        return true;
+        fail(FailState::UnableToInitializeCode,
+             std::string("Failed to load Wasm module due to a missing import: ") +
+                 std::string(module_name) + "." + std::string(name));
+        return false;
       }
 
       auto *func = it->second->callback_.get();
@@ -319,10 +319,9 @@ bool Wasmtime::link(std::string_view /*debug_name*/) {
     }
   }
 
-  // ereslibre: not necessarily based on Linker::define_unknown_imports_as_traps
-  // if (import_types.get()->size != imports.size()) {
-  //   return false;
-  // }
+  if (import_types.get()->size != imports.size()) {
+    return false;
+  }
 
   wasm_extern_vec_t imports_vec = {imports.size(), imports.data()};
   instance_ = wasm_instance_new(store_.get(), module_.get(), &imports_vec, nullptr);
