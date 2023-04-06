@@ -111,7 +111,7 @@ using WasmCallback_WWl = Word (*)(Word, int64_t);
 using WasmCallback_WWlWW = Word (*)(Word, int64_t, Word, Word);
 using WasmCallback_WWm = Word (*)(Word, uint64_t);
 using WasmCallback_WWmW = Word (*)(Word, uint64_t, Word);
-using WasmCallback_WWWWdW = Word (*)(Word, Word, Word, uint64_t, Word);
+using WasmCallback_WWWWlW = Word (*)(Word, Word, Word, int64_t, Word);
 using WasmCallback_WWWWWWllWW = Word (*)(Word, Word, Word, Word, Word, int64_t, int64_t, Word,
                                          Word);
 using WasmCallback_dd = double (*)(double);
