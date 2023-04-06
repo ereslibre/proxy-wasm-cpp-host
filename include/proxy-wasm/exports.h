@@ -129,6 +129,25 @@ Word call_foreign_function(Word function_name, Word function_name_size, Word arg
 
 // Runtime environment functions exported from envoy to wasm.
 
+//<< ereslibre: list of missing imports used by PHP cli
+//  - fd_filestat_get
+//  - fd_filestat_set_size
+//  - fd_readdir
+//  - fd_sync
+//  - fd_tell
+//  - path_create_directory
+//  - path_filestat_get
+//  - path_filestat_set_times
+//  - path_link
+//  - path_open
+//  - path_readlink
+//  - path_remove_directory
+//  - path_rename
+//  - path_symlink
+//  - path_unlink_file
+//  - poll_oneoff
+//>> ereslibre: list of missing imports used by PHP cli
+
 Word wasi_unstable_path_open(Word fd, Word dir_flags, Word path, Word path_len, Word oflags,
                              int64_t fs_rights_base, int64_t fg_rights_inheriting, Word fd_flags,
                              Word nwritten_ptr);
