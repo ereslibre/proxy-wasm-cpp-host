@@ -373,7 +373,9 @@ void WasmBase::startVm(ContextBase *root_context) {
              // time
              "wasi_unstable.clock_time_get", "wasi_snapshot_preview1.clock_time_get",
              // random
-             "wasi_unstable.random_get", "wasi_snapshot_preview1.random_get"});
+             "wasi_unstable.random_get", "wasi_snapshot_preview1.random_get",
+             // additional WIP
+             "wasi_unstable.fd_datasync", "wasi_snapshot_preview1.fd_datasync"});
   if (_initialize_) {
     // WASI reactor.
     _initialize_(root_context);
