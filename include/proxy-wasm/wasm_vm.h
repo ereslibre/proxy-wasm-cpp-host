@@ -112,8 +112,11 @@ using WasmCallback_WWlWW = Word (*)(Word, int64_t, Word, Word);
 using WasmCallback_WWm = Word (*)(Word, uint64_t);
 using WasmCallback_WWmW = Word (*)(Word, uint64_t, Word);
 using WasmCallback_WWWWdW = Word (*)(Word, Word, Word, int64_t, Word);
+using WasmCallback_WWWWWllWW = Word (*)(Word, Word, Word, Word, int64_t, int64_t, Word,
+                                         Word);
 using WasmCallback_WWWWWWllWW = Word (*)(Word, Word, Word, Word, Word, int64_t, int64_t, Word,
                                          Word);
+
 using WasmCallback_dd = double (*)(double);
 
 #define FOR_ALL_WASM_VM_IMPORTS(_f)                                                                \
@@ -132,7 +135,8 @@ using WasmCallback_dd = double (*)(double);
                                                   _f(proxy_wasm::WasmCallback_WWm)                 \
                                                       _f(proxy_wasm::WasmCallback_WWmW)            \
                                                         _f(proxy_wasm::WasmCallback_WWWWdW)        \
-                                                          _f(proxy_wasm::WasmCallback_WWWWWWllWW)  \
+                                                          _f(proxy_wasm::WasmCallback_WWWWWllWW)  \
+                                                            _f(proxy_wasm::WasmCallback_WWWWWWllWW)  \
                                                               _f(proxy_wasm::WasmCallback_dd)
 
 enum class Cloneable {
