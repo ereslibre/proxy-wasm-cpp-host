@@ -923,7 +923,7 @@ Word wasi_unstable_path_link(Word old_fd, Word old_flags, Word old_path, Word ne
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_open(Word fd, Word dirflags, Word path, Word oflags, Wordfs_rights_base, Word fs_rights_inheriting, Word fdflags) {
+Word wasi_unstable_path_open(Word fd, Word dirflags, Word path, Word oflags, Word fs_rights_base, Word fs_rights_inheriting, Word fdflags) {
   return 0; // __WASI_ESUCCESS
 }
 
