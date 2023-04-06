@@ -146,6 +146,7 @@ Word wasi_unstable_args_sizes_get(Word argc_ptr, Word argv_buf_size_ptr);
 void wasi_unstable_proc_exit(Word);
 Word wasi_unstable_clock_time_get(Word, uint64_t, Word);
 Word wasi_unstable_random_get(Word, Word);
+Word wasi_unstable_fd_datasync(Word);
 Word pthread_equal(Word left, Word right);
 void emscripten_notify_memory_growth(Word);
 
@@ -172,7 +173,7 @@ void emscripten_notify_memory_growth(Word);
 #define FOR_ALL_WASI_FUNCTIONS(_f)                                                                 \
   _f(fd_write) _f(fd_read) _f(fd_seek) _f(fd_close) _f(fd_fdstat_get) _f(environ_get)              \
       _f(environ_sizes_get) _f(args_get) _f(args_sizes_get) _f(clock_time_get) _f(random_get)      \
-          _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name)
+      _f(fd_datasync) _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name)
 
 // Helpers to generate a stub to pass to VM, in place of a restricted proxy-wasm capability.
 #define _CREATE_PROXY_WASM_STUB(_fn)                                                               \
