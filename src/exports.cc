@@ -891,11 +891,11 @@ Word wasi_unstable_fd_filestat_get(Word fd, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_fd_filestat_set_size(Word fd, double size) {
+Word wasi_unstable_fd_filestat_set_size(Word fd, uint64_t size) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_fd_readdir(Word, Word, Word, int64_t, Word) {
+Word wasi_unstable_fd_readdir(Word, Word, Word, double, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
