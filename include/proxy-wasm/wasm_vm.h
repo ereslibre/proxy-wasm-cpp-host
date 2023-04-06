@@ -130,6 +130,7 @@ using WasmCallback_dd = double (*)(double);
                                               _f(proxy_wasm::WasmCallback_WWlWW)                   \
                                                   _f(proxy_wasm::WasmCallback_WWm)                 \
                                                       _f(proxy_wasm::WasmCallback_WWmW)            \
+                                                        _f(proxy_wasm::WasmCallback_WWWdW)          \
                                                           _f(proxy_wasm::WasmCallback_WWWWWWllWW)  \
                                                               _f(proxy_wasm::WasmCallback_dd)
 
