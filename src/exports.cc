@@ -883,6 +883,10 @@ Word wasi_unstable_fd_datasync(Word fd) {
   return 0; // __WASI_ESUCCESS
 }
 
+Word wasi_unstable_fd_fdstat_set_flags(Word fd, Word flags) {
+  return 0; // __WASI_ESUCCESS
+}
+
 // void __wasi_proc_exit(__wasi_exitcode_t rval);
 void wasi_unstable_proc_exit(Word /*exit_code*/) {
   auto *context = contextOrEffectiveContext();
