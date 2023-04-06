@@ -911,39 +911,35 @@ Word wasi_unstable_path_create_directory(Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_filestat_get(Word fd, Word flags, Word path) {
+Word wasi_unstable_path_filestat_get(Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_filestat_set_times(Word fd, Word flags, Word path, Word atim, Word mtim, Word fst_flags) {
+Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_link(Word old_fd, Word old_flags, Word old_path, Word new_fd, Word new_path) {
+Word wasi_unstable_path_link(Word, Word, Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_open(Word fd, Word dirflags, Word path, Word oflags, Word fs_rights_base, Word fs_rights_inheriting, Word fdflags) {
+Word wasi_unstable_path_readlink(Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_readlink(Word fd, Word path, Word buf, Word buf_len) {
+Word wasi_unstable_path_remove_directory(Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_remove_directory(Word fd, Word path) {
+Word wasi_unstable_path_rename(Word, Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_rename(Word fd, Word old_path, Word new_fd, Word new_path) {
+Word wasi_unstable_path_symlink(Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_symlink(Word old_path, Word fd, Word new_path) {
-  return 0; // __WASI_ESUCCESS
-}
-
-Word wasi_unstable_path_unlink_file(Word fd, Word path) {
+Word wasi_unstable_path_unlink_file(Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 

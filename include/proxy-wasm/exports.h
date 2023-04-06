@@ -158,14 +158,14 @@ Word wasi_unstable_fd_readdir(Word, Word, Word, int64_t, Word);
 Word wasi_unstable_fd_sync(Word);
 Word wasi_unstable_fd_tell(Word, Word);
 Word wasi_unstable_path_create_directory(Word, Word, Word);
-Word wasi_unstable_path_filestat_get(Word, Word, Word);
-Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, Word, Word);
-Word wasi_unstable_path_link(Word, Word, Word, Word, Word);
-Word wasi_unstable_path_readlink(Word, Word, Word, Word);
-Word wasi_unstable_path_remove_directory(Word, Word);
+Word wasi_unstable_path_filestat_get(Word, Word, Word, Word);
+Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_link(Word, Word, Word, Word, Word, Word, Word);
+Word wasi_unstable_path_readlink(Word, Word, Word, Word, Word);
+Word wasi_unstable_path_remove_directory(Word, Word, Word);
 Word wasi_unstable_path_rename(Word, Word, Word, Word);
-Word wasi_unstable_path_symlink(Word, Word, Word);
-Word wasi_unstable_path_unlink_file(Word, Word);
+Word wasi_unstable_path_symlink(Word, Word, Word, Word, Word);
+Word wasi_unstable_path_unlink_file(Word, Word, Word);
 Word wasi_unstable_poll_oneoff(Word, Word, Word);
 
 // Support for embedders, not exported to Wasm.
