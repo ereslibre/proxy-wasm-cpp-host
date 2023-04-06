@@ -887,7 +887,7 @@ Word wasi_unstable_fd_fdstat_set_flags(Word fd, Word flags) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_fd_filestat_get(Word fd) {
+Word wasi_unstable_fd_filestat_get(Word fd, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
