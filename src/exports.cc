@@ -895,7 +895,7 @@ Word wasi_unstable_fd_filestat_set_size(Word fd, uint64_t size) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_fd_readdir(Word fd, Word buf, Word buf_len, Word cookie) {
+Word wasi_unstable_fd_readdir(Word, Word, Word, uint64_t, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
