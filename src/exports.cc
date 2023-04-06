@@ -943,7 +943,7 @@ Word wasi_unstable_path_unlink_file(Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_poll_oneoff(Word in, Word out, Word nsubscriptions) {
+Word wasi_unstable_poll_oneoff(Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
