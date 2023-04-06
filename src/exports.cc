@@ -903,7 +903,7 @@ Word wasi_unstable_fd_sync(Word fd) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_fd_tell(Word fd) {
+Word wasi_unstable_fd_tell(Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
