@@ -167,7 +167,7 @@ Word wasi_unstable_path_remove_directory(Word, Word);
 Word wasi_unstable_path_rename(Word, Word, Word, Word);
 Word wasi_unstable_path_symlink(Word, Word, Word);
 Word wasi_unstable_path_unlink_file(Word, Word);
-Word wasi_unstable_poll_oneoff(Word, Word, Word)
+Word wasi_unstable_poll_oneoff(Word, Word, Word);
 
 // Support for embedders, not exported to Wasm.
 
