@@ -891,7 +891,7 @@ Word wasi_unstable_fd_filestat_get(Word fd, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_fd_filestat_set_size(Word fd, uint64_t size) {
+Word wasi_unstable_fd_filestat_set_size(Word fd, double size) {
   return 0; // __WASI_ESUCCESS
 }
 
