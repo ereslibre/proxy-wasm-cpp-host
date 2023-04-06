@@ -923,7 +923,7 @@ Word wasi_unstable_path_link(Word, Word, Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_readlink(Word, Word, Word, Word, Word) {
+Word wasi_unstable_path_readlink(Word, Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
