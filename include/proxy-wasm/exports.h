@@ -161,7 +161,6 @@ Word wasi_unstable_path_create_directory(Word, Word);
 Word wasi_unstable_path_filestat_get(Word, Word, Word);
 Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, Word, Word);
 Word wasi_unstable_path_link(Word, Word, Word, Word, Word);
-Word wasi_unstable_path_open(Word, Word, Word, Word, Word, Word, Word);
 Word wasi_unstable_path_readlink(Word, Word, Word, Word);
 Word wasi_unstable_path_remove_directory(Word, Word);
 Word wasi_unstable_path_rename(Word, Word, Word, Word);
@@ -195,7 +194,7 @@ Word wasi_unstable_poll_oneoff(Word, Word, Word);
   _f(fd_datasync) _f(fd_fdstat_set_flags) _f(proc_exit) _f(path_open) _f(fd_prestat_get) _f(fd_prestat_dir_name) \
   _f(fd_filestat_get) _f(fd_filestat_set_size) _f(fd_readdir) _f(fd_sync) _f(fd_tell)              \
   _f(path_create_directory) _f(path_filestat_get) _f(path_filestat_set_times) _f(path_link)        \
-  _f(path_open) _f(path_readlink) _f(path_remove_directory) _f(path_rename) _f(path_symlink)       \
+  _f(path_readlink) _f(path_remove_directory) _f(path_rename) _f(path_symlink)       \
   _f(path_unlink_file) _f(poll_oneoff)
 
 
