@@ -153,7 +153,7 @@ void emscripten_notify_memory_growth(Word);
 Word wasi_unstable_fd_datasync(Word);
 Word wasi_unstable_fd_fdstat_set_flags(Word, Word);
 Word wasi_unstable_fd_filestat_get(Word, Word);
-Word wasi_unstable_fd_filestat_set_size(Word, Word);
+Word wasi_unstable_fd_filestat_set_size(Word, uint64_t);
 Word wasi_unstable_fd_readdir(Word, Word, Word, Word);
 Word wasi_unstable_fd_sync(Word);
 Word wasi_unstable_fd_tell(Word);
