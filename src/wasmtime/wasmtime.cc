@@ -260,7 +260,7 @@ bool Wasmtime::link(std::string_view /*debug_name*/) {
       auto it = host_functions_.find(std::string(module_name) + "." + std::string(name));
       if (it == host_functions_.end()) {
         fail(FailState::UnableToInitializeCode,
-             std::string("Failed to load Wasm module due to a missing import: ") +
+             std::string("Failed to load Wasm module due to a missing import (extern func): ") +
                  std::string(module_name) + "." + std::string(name));
         return false;
       }
@@ -286,7 +286,7 @@ bool Wasmtime::link(std::string_view /*debug_name*/) {
     case WASM_EXTERN_GLOBAL: {
       // TODO(mathetake): add support when/if needed.
       fail(FailState::UnableToInitializeCode,
-           "Failed to load Wasm module due to a missing import: " + std::string(module_name) + "." +
+           "Failed to load Wasm module due to a missing import (extern global): " + std::string(module_name) + "." +
                std::string(name));
       return false;
     } break;
