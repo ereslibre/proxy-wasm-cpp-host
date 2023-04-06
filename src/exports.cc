@@ -907,7 +907,7 @@ Word wasi_unstable_fd_tell(Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_create_directory(Word fd, Word path) {
+Word wasi_unstable_path_create_directory(Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
