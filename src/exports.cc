@@ -915,7 +915,7 @@ Word wasi_unstable_path_filestat_get(Word, Word, Word, Word, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
-Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, Word, Word, Word) {
+Word wasi_unstable_path_filestat_set_times(Word, Word, Word, Word, int64_t, int64_t, Word) {
   return 0; // __WASI_ESUCCESS
 }
 
